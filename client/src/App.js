@@ -30,7 +30,7 @@ function App() {
   const [repeatedRequest, setRepeatedRequest] = useState(false);
 
   function submit() {
-    axios.post("http://localhost:5000/submit", {
+    axios.post("/submit", {
       subject: subject.current.state.value,
       body: editor.current.value,
     }).then(() => {
@@ -44,7 +44,7 @@ function App() {
     var interval;
     if (repeatedRequest) {
       interval = setInterval(() => {
-        axios.get("http://localhost:5000/getEmails").then((res) => {
+        axios.get("/getEmails").then((res) => {
           setEmails(res.data);
           setRepeatedRequest(false);
         });
@@ -56,7 +56,7 @@ function App() {
 
   const props = {
     name: "file",
-    action: "http://localhost:5000/upload",
+    action: "/upload",
 
     onChange(info) {
       setRepeatedRequest(true);
@@ -69,7 +69,7 @@ function App() {
   };
 
 function login(data){
-  axios.post("http://localhost:5000/login",{
+  axios.post("/login",{
     user: data.username,
     pswd: data.password
   }).then(res => {
@@ -132,7 +132,7 @@ function login(data){
             )}
 
             <div className="email">
-              <form action="http://localhost:5000/submit" method="post">
+              <form action="/submit" method="post">
                 <Input placeholder="Basic usage" ref={subject} />
                 <JoditEditor
                   ref={editor}
