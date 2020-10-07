@@ -1,0 +1,31 @@
+{
+  "name": "emailsender",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "busboy": "^0.3.1",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.13",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "read-excel-file": "^4.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && run install-client && run build",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chotubhai/EmailSender.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chotubhai/EmailSender/issues"
+  },
+  "homepage": "https://github.com/chotubhai/EmailSender#readme"
+}
