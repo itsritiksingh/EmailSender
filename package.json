@@ -14,9 +14,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && run install-client && run build",
-    "build": "cd client && npm run build",
-    "install-client": "cd client && npm install"
+    "heroku-postbuild": "npm install && cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
